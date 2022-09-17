@@ -8,6 +8,8 @@
 :set encoding=UTF-8
 :set guifont=DroidSansMono\ Nerd\ Font\ 11
 :set statusline=%{FugitiveStatusline()}
+let g:coc_disable_startup_warning = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 call plug#begin('~/.config/nvim/plug')
 
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -19,7 +21,8 @@ Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/neoclide/coc.nvim'
+Plug 'davidhalter/jedi-vim'
+Plug 'jiangmiao/auto-pairs'
 
 " color schemas
 Plug 'morhetz/gruvbox'  " colorscheme gruvbox
@@ -33,8 +36,3 @@ call plug#end()
 
 nnoremap <C-p> :NERDTree<CR>
 nnoremap <C-t> :TerminalSplit zsh<CR>
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
