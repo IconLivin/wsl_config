@@ -6,6 +6,16 @@ bindkey '5D' backward-word
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 
+zzz() {
+	if [ $# -eq 0 ]
+	  then
+	    container="confd"
+	else
+	    container=$1
+	fi
+	echo $container
+}
+
 # aliases
 alias python="python.exe"
 alias pip="pip.exe"
@@ -19,6 +29,8 @@ alias pull="git pull"
 alias push="git push"
 alias dch='dch --upstream -Dunstable --nmu --urgency=low'
 alias helper="TMUX='' tmux new-session -s helper 'python3 ~/helper/main.py'"
+alias sshp="grep -E 'Host ([0-9])' ~/.ssh/config | sed -r 's/Host//g'"
+alias ssh=sshrc
 #########
 set encoding=utf8
 autoload -U promptinit 
