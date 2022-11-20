@@ -15,4 +15,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 source ~/.zshrc
 
 nvm install --lts
-npm install -g yarn 
+npm install -g yarn
+nvim -es +PlugInstall
+
+yarn install ~/.config/nvim/plug/coc.nvim/
+
+nvim -es +"CocInstall coc-pyright"
