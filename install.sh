@@ -2,9 +2,13 @@
 
 echo Install packages
 
-sudo apt-get update && sudo apt-get install -y zsh neovim bpython wslu unzip
+sudo apt-get update && sudo apt-get install -y tmux zsh neovim bpython wslu unzip
 
 cp -r .zshrc ~/ 
+cp -r .tmux ~/
+cp .tmux.conf ~/
+cp .git.plugin ~/
+
 
 mkdir ~/.config && cp -r nvim ~/.config/
 
