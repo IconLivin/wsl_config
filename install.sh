@@ -19,12 +19,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
 mkdir ~/.poshthemes
-wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
-unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+cp 1_shell.omp.json ~/.poshthemes/
 chmod u+rw ~/.poshthemes/*.omp.*
-rm ~/.poshthemes/themes.zip
+
 
 source ~/.zshrc
+
+chsh -s $(which zsh)
 
 nvm install --lts
 npm install -g yarn
