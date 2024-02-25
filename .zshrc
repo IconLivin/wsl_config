@@ -54,7 +54,11 @@ setopt PROMPT_SUBST
 
 export POSH_THEME=$(eval echo ~$USER)/.poshthemes/1_shell.omp.json
 eval "$(oh-my-posh init zsh)"
-source ~/.git.plugin
+
+source ~/.zsh/git/git.plugin
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autoenv/autoenv.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
